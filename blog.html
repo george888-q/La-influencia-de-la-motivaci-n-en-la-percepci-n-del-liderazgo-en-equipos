@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La influencia de la motivación en la percepción del liderazgo en equipos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 0;
+            min-height: 100vh;
+            animation: fadeInBody 0.8s ease-in;
+        }
+
+        @keyframes fadeInBody {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            padding: 80px 50px 60px;
+            text-align: left;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInHeader 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+            animation: zoomIn 20s ease-in-out infinite alternate;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            animation: slideInLeft 1s ease-out 0.4s both;
+            transition: transform 0.3s ease;
+        }
+
+        header h1:hover {
+            transform: translateX(10px);
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        header::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+            animation: expandWidth 1s ease-out 0.8s both;
+        }
+
+        @keyframes expandWidth {
+            from {
+                width: 0;
+            }
+            to {
+                width: 80px;
+            }
+        }
+
+        .content {
+            padding: 60px 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            animation: fadeInUp 1s ease-out 0.6s both;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5d6 100%);
+            color: #2c2c2c;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-left: 5px solid #FFD700;
+            border-radius: 8px;
+            font-size: 1.1em;
+            line-height: 1.9;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            animation: slideInRight 1s ease-out 0.8s both;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15);
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        h2 {
+            color: #C41E3A;
+            font-size: 2em;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FFD700;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: fadeInScale 0.8s ease-out both;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        h2:hover {
+            transform: translateX(10px);
+            color: #8B0000;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h2::before {
+            content: '';
+            width: 5px;
+            height: 30px;
+            background: #C41E3A;
+            border-radius: 3px;
+            animation: expandHeight 0.6s ease-out 0.3s both;
+        }
+
+        @keyframes expandHeight {
+            from {
+                height: 0;
+            }
+            to {
+                height: 30px;
+            }
+        }
+
+        h3 {
+            color: #8B0000;
+            font-size: 1.4em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: transform 0.3s ease, color 0.3s ease;
+            animation: fadeInScale 0.6s ease-out both;
+        }
+
+        h3:hover {
+            transform: translateX(5px);
+            color: #C41E3A;
+        }
+
+        p {
+            margin-bottom: 22px;
+            text-align: justify;
+            font-size: 1.05em;
+            color: #444;
+            animation: fadeInUp 0.8s ease-out both;
+            transition: color 0.3s ease;
+        }
+
+        p:hover {
+            color: #2c2c2c;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.9;
+        }
+
+        .concept-box {
+            background: #ffffff;
+            border-left: 5px solid #C41E3A;
+            padding: 35px;
+            margin: 35px 0;
+            line-height: 1.9;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-left-width 0.3s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .concept-box:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 12px 40px rgba(196, 30, 58, 0.2);
+            border-left-width: 8px;
+        }
+
+        .concept-box:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .concept-box:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .concept-box:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .concept-box strong {
+            color: #C41E3A;
+            font-size: 1.1em;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .concept-image {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .concept-image:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .strategy-section {
+            background: linear-gradient(135deg, #fffaf0 0%, #fff5e6 100%);
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 5px solid #FFD700;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .strategy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(255, 215, 0, 0.2);
+        }
+
+        .strategy-image {
+            width: 100%;
+            max-width: 700px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .strategy-image:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips-section {
+            background: linear-gradient(135deg, #fffef5 0%, #fffbf0 100%);
+            padding: 40px;
+            margin: 40px 0;
+            border-left: 5px solid #FFD700;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .tips-section:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 35px rgba(255, 215, 0, 0.2);
+        }
+
+        .tips-image {
+            width: 100%;
+            max-width: 600px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .tips-image:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .case-study {
+            background: #ffffff;
+            padding: 35px;
+            margin: 40px 0;
+            border-left: 5px solid #C41E3A;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(196, 30, 58, 0.1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .case-study:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(196, 30, 58, 0.25);
+        }
+
+        .case-study:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .case-study:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .case-study:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .case-study h3 {
+            color: #C41E3A;
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .case-image {
+            width: 100%;
+            max-width: 650px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .case-image:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .resources {
+            background: linear-gradient(135deg, #f8f8f8 0%, #f0f0f0 100%);
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            animation: fadeInUp 0.8s ease-out both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .resources:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .resources-image {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 25px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .resources-image:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container {
+            margin: 30px 0;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .video-container:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .video-container:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .video-container:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .video-container:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .video-container:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .video-container h4 {
+            color: #C41E3A;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .video-container p {
+            color: #666;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            color: #ffffff;
+            padding: 50px;
+            margin: 60px 0;
+            font-size: 1.1em;
+            line-height: 1.9;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(196, 30, 58, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInScale 1s ease-out both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .conclusion:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 50px rgba(196, 30, 58, 0.4);
+        }
+
+        .conclusion::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+            animation: zoomIn 15s ease-in-out infinite alternate;
+        }
+
+        .conclusion h2 {
+            color: #FFD700;
+            border-bottom: 3px solid rgba(255, 215, 0, 0.4);
+            margin-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .conclusion p {
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bibliography {
+            background: #fafafa;
+            padding: 40px;
+            margin-top: 60px;
+            border-top: 3px solid #FFD700;
+            border-radius: 8px 8px 0 0;
+            animation: fadeInUp 0.8s ease-out both;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .bibliography:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 35px rgba(255, 215, 0, 0.15);
+        }
+
+        .bibliography li {
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            color: #e0e0e0;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 0.95em;
+            border-top: 4px solid #C41E3A;
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .author-info {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #555;
+        }
+
+        .author-info h3 {
+            color: #FFD700;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            font-weight: 500;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .author-info h3:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .author-info p {
+            color: #C0C0C0;
+            font-size: 0.95em;
+            margin: 5px 0;
+        }
+
+        /* Animaciones al hacer scroll */
+        @keyframes fadeInOnScroll {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-scroll {
+            opacity: 0;
+            animation: fadeInOnScroll 0.8s ease-out forwards;
+        }
+
+        /* Animación de carga para elementos */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        /* Efecto de brillo en títulos */
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                text-shadow: 2px 2px 20px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+            }
+        }
+
+        header h1 {
+            animation: slideInLeft 1s ease-out 0.4s both, glow 3s ease-in-out infinite 2s;
+        }
+
+        /* Animación para botones y enlaces */
+        a, button {
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Animación para listas */
+        li {
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+            color: #C41E3A;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 50px 25px 40px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 40px 25px;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .intro {
+                padding: 25px;
+            }
+
+            .hero-image,
+            .concept-image,
+            .strategy-image,
+            .tips-image,
+            .case-image,
+            .resources-image {
+                height: 200px;
+            }
+
+            .video-container {
+                padding: 15px;
+            }
+
+            .video-container h4 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>La influencia de la motivación en la percepción del liderazgo en equipos</h1>
+        </header>
+
+        <div class="content">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80" alt="Equipo trabajando en colaboración" class="hero-image">
+
+            <div class="intro">
+                La falta de motivación en los equipos es un problema crítico que afecta tanto la productividad como la dinámica interna de las organizaciones. Estudios recientes destacan que la población valora especialmente a un líder que sea capaz de motivar e inspirar: por ejemplo, el 81% de los panameños considera que un buen líder es quien motiva a su equipo. Sin embargo, cuando la motivación decae, la percepción del liderazgo suele deteriorarse: los colaboradores tienden a atribuir la baja motivación a fallos de la dirección o al estilo de liderazgo. Este vínculo causa un círculo vicioso donde la desmotivación reduce la confianza en el líder y empeora el clima laboral. Por ello, comprender cómo la falta de motivación afecta la visión que los equipos tienen de sus líderes es esencial, especialmente en contextos educativos y laborales de Panamá y Centroamérica.
+            </div>
+
+            <h2>Conceptos clave</h2>
+
+            <div class="concept-box">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Motivación y liderazgo" class="concept-image">
+                <strong>● Motivación:</strong> Se entiende como el impulso interno o esfuerzo necesario que dirige la conducta hacia una meta determinada. En el ámbito organizacional, la motivación laboral puede ser intrínseca (satisfacción personal, desafíos interesantes) o extrínseca (recompensas económicas, reconocimiento). Autores clásicos (Maslow, Herzberg, McClelland) resaltan factores como el logro, reconocimiento, responsabilidad y crecimiento como motivadores claves. La motivación alta mantiene el compromiso y la satisfacción; su ausencia (desmotivación) se manifiesta en apatía, bajo rendimiento o alta rotación.
+            </div>
+
+            <div class="concept-box">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80" alt="Percepción del liderazgo" class="concept-image">
+                <strong>● Percepción del liderazgo:</strong> Se refiere a cómo los miembros del equipo ven y evalúan al líder sus comportamientos, estilo y eficacia a partir de su experiencia. El liderazgo mismo se define como un fenómeno psicosocial por el cual un líder "influye y motiva voluntariamente a los seguidores para realizar esfuerzos hacia el logro de metas comunes". La percepción del liderazgo depende entonces de factores como la comunicación del líder, su coherencia entre palabras y acciones, y la capacidad para guiar y reconocer al equipo. Cuando los colaboradores están desmotivados, tienden a atribuir esta situación a fallos del liderazgo, lo que empeora aún más su opinión sobre el líder.
+            </div>
+
+            <div class="concept-box">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80" alt="Clima laboral positivo" class="concept-image">
+                <strong>● Clima laboral:</strong> Engloba las condiciones psicológicas, emocionales, culturales y organizacionales del entorno de trabajo. Un clima laboral positivo refleja el bienestar colectivo; influye directamente en la productividad y la motivación de los empleados. El estilo de liderazgo es uno de los factores determinantes del clima organizacional, ya que afecta la moral y motivación del equipo. Por ejemplo, los entornos laborales con líderes empáticos y comunicativos tienden a generar mayor sentido de pertenencia y compromiso. En cambio, la falta de reconocimiento y comunicación efectiva –aspectos ligados a un liderazgo deficiente– contribuye a un clima negativo y alta desmotivación.
+            </div>
+
+            <h2>Estrategias y prácticas efectivas</h2>
+
+            <div class="strategy-section">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1000&q=80" alt="Estrategias de liderazgo" class="strategy-image">
+                <p>La literatura en gestión de recursos humanos y liderazgo ofrece múltiples recomendaciones para revertir la desmotivación y fortalecer la percepción de liderazgo. Entre las más destacadas se encuentran:</p>
+
+                <h3>● Comunicar un propósito claro</h3>
+                <p>Asegurar que el equipo entienda por qué su trabajo es valioso. Los líderes deben exponer una visión y objetivos alineados con los valores organizacionales. Al conectar las tareas diarias con un fin mayor, los colaboradores perciben coherencia y significado en su esfuerzo, reactivando su compromiso. Por ejemplo, empresas como Patagonia motivan al personal mostrando cómo cada tarea contribuye a la sostenibilidad ambiental, lo que aumenta su entusiasmo.</p>
+
+                <h3>● Reconocer logros y dar feedback positivo</h3>
+                <p>El reconocimiento oportuno y sincero refuerza la autoestima y el sentido de logro del equipo. Implementar sistemas simples como un "Empleado del Mes" o premios simbólicos, esto ayuda a que los colaboradores sientan que sus esfuerzos son valorados. Además, brindar retroalimentación constructiva orientada al aprendizaje (más que al castigo) permite corregir errores sin dañar la moral. Iniciativas como el programa interno "gThanks" de Google (donde empleados elogian públicamente el buen desempeño de sus compañeros) generan una cultura de aprecio constante.</p>
+
+                <h3>● Empoderar con autonomía</h3>
+                <p>Delegar responsabilidades y permitir que el equipo tome decisiones en sus áreas fortalece el sentido de pertenencia. Dar autonomía genera confianza en las habilidades de los empleados y los motiva, pues se sienten dueños de parte del proceso productivo. Por ejemplo, al permitir a los colaboradores diseñar procesos o métodos de trabajo, el líder no solo reduce su carga, sino que impulsa la iniciativa y creatividad del equipo.</p>
+
+                <h3>● Fomentar el desarrollo profesional</h3>
+                <p>Ofrecer capacitación continua, planes de carrera claros y oportunidades de aprendizaje demuestra que la organización invierte en su gente. Programas de formación, mentorías o financiamiento de estudios (como el programa "Career Choice" de Amazon) aumentan el compromiso al evidenciar que la empresa valora el crecimiento de los empleados. En contextos educativos, capacitar a estudiantes en liderazgo y trabajo en equipo también genera mayor motivación intrínseca hacia la materia.</p>
+
+                <h3>● Implementar planes de motivación sostenibles</h3>
+                <p>Más allá de acciones puntuales, es crucial diseñar una estrategia a largo plazo que mantenga la motivación y liderazgo activo en el tiempo. Esto incluye fijar metas alcanzables y medibles, crear una cultura permanente de reconocimiento y bienestar, y alinear todas las iniciativas con los valores de la organización. Por ejemplo, empresas como Salesforce han incorporado programas de bienestar (meditación, asesoría psicológica, días libres) junto con incentivos no monetarios constantes para mantener alto el ánimo general.</p>
+            </div>
+
+            <p>En resumen, un líder eficaz debe combinar comunicación clara, empatía y herramientas concretas (reconocimiento, autonomía, formación) para mantener la motivación alta y, por ende, ser percibido positivamente por su equipo.</p>
+
+            <h2>Consejos rápidos</h2>
+
+            <div class="tips-section">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1000&q=80" alt="Consejos de liderazgo" class="tips-image">
+                <ul>
+                    <li><strong>Establecer objetivos claros:</strong> Definir metas específicas y realistas para cada proyecto, de modo que todos entiendan qué se espera de ellos. La claridad evita frustraciones y orienta el esfuerzo.</li>
+                    <li><strong>Dar reconocimiento constante:</strong> Felicitar públicamente logros pequeños y grandes, usar elogios sinceros o incentivos (aunque sean simbólicos). El aprecio frecuente combate la sensación de ser ignorado, que es la principal causa de desmotivación.</li>
+                    <li><strong>Fomentar la colaboración:</strong> Promover el trabajo en equipo con actividades grupales, debates o proyectos conjuntos. La interacción positiva entre compañeros refuerza la motivación colectiva. Según expertos, los equipos motivados colaboran naturalmente, pero cuando aparece la desmotivación suele notarse falta de cooperación y tensión entre colegas.</li>
+                    <li><strong>Dar autonomía gradual:</strong> Incluir a estudiantes o empleados en la toma de decisiones simples (por ejemplo, cómo presentar un tema o qué materiales usar). Esto aumenta su sentido de responsabilidad y entusiasmo por participar.</li>
+                    <li><strong>Brindar retroalimentación constructiva:</strong> En el aula o la oficina, corregir errores con consejos de mejora, no con castigos o críticas duras. El feedback enfocado en el crecimiento personal mantiene alta la moral del grupo.</li>
+                    <li><strong>Escuchar activamente:</strong> Abrir espacios de diálogo (reuniones breves, encuestas, buzón de sugerencias) para conocer inquietudes. Los líderes que escuchan muestran interés por el equipo, lo cual genera mayor compromiso.</li>
+                    <li><strong>Conectar el contenido con la realidad:</strong> En educación, relacionar lo visto en clase con ejemplos prácticos de la vida o del trabajo. En empresas, explicar cómo cada tarea aporta a la misión general. Hacer evidente la relevancia del aprendizaje o del trabajo refuerza la motivación intrínseca.</li>
+                </ul>
+            </div>
+
+            <h2>Casos de éxito de líderes jóvenes</h2>
+
+            <div class="case-study">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&q=80" alt="Líder joven emprendedor" class="case-image">
+                <h3>Victoria Alonsoperez (Uruguay)</h3>
+                <p>Alrededor de sus veintitantos años, Victoria fue reconocida por su rol como cofundadora de IEETech. Su proyecto se destacó como "startup más innovadora de América Latina y el Caribe" tras ganar un premio del Banco Interamericano de Desarrollo (BID) y MasterCard.</p>
+                <p>IEETech desarrolló una solución tecnológica para monitorear la ubicación y salud de hatos ganaderos (seguimiento de ganado), con un claro enfoque en mejorar la productividad, seguridad sanitaria y eficiencia en el sector agropecuario.</p>
+                <p>Este caso demuestra cómo un liderazgo joven con motivación, visión técnica y compromiso con su contexto (sector agropecuario, desarrollo económico) puede generar innovación concreta, impacto social/económico y reconocimiento internacional.</p>
+            </div>
+
+            <div class="case-study">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=80" alt="Equipo trabajando" class="case-image">
+                <h3>Diego Olcese (Perú) — fundador de Crehana</h3>
+                <p>Olcese es uno de los jóvenes emprendedores destacados en América Latina por su trayectoria con Crehana, una plataforma educativa digital orientada a creativos.</p>
+                <p>Su liderazgo se tradujo en una visión clara: democratizar el acceso a educación creativa y profesional en la región. Durante la pandemia, Crehana creció fuertemente y logró captar inversión significativa, lo que valida su modelo y la efectividad de su gestión.</p>
+                <p>La historia muestra cómo un joven líder puede identificar una necesidad real (educación accesible), articular un proyecto, movilizar recursos y mantener motivación y enfoque en medio de circunstancias difíciles.</p>
+            </div>
+
+            <div class="case-study">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1000&q=80" alt="Jóvenes líderes" class="case-image">
+                <h3>Jóvenes participantes del programa Generación L de CAF (América Latina)</h3>
+                <p>Este programa reúne jóvenes de diversos países de Latinoamérica con edades entre 18 y 25 años, con el objetivo de fortalecer sus capacidades de liderazgo, pensamiento crítico, emprendimiento social y competencias transversales.</p>
+                <p>Los jóvenes desarrollan proyectos de intervención pública, innovación social o comunitaria usando metodologías de diseño, lo que evidencia que su motivación y formación en liderazgo puede traducirse en iniciativas reales con impacto.</p>
+                <p>Este tipo de programas demuestra que con el soporte correspondiente (capacitación, redes de apoyo, mentoría) los jóvenes pueden canalizar su motivación hacia liderazgo efectivo, también aportando al desarrollo social y comunitario.</p>
+            </div>
+
+            <h2>Recursos adicionales</h2>
+
+            <div class="resources">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1000&q=80" alt="Recursos de aprendizaje" class="resources-image">
+                
+                <div class="video-container">
+                    <h4>"Actitud" – Víctor Küppers</h4>
+                    <p>El conferencista aborda cómo recuperar la motivación diaria cambiando la actitud frente al trabajo y la vida.</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/nWecIwtN2ho" title="Actitud - Víctor Küppers" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h4>"Guía breve para ser extraordinario" – David Criado</h4>
+                    <p>Presenta consejos prácticos para impulsar el crecimiento personal y profesional.</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/7XFLTDQ4JMk" title="Guía breve para ser extraordinario - David Criado" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h4>"La pasión de ser diferente" – Bosco Tamames</h4>
+                    <p>Explica la importancia de seguir metas propias a pesar de la presión social, factor clave de motivación intrínseca.</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/9XGUpK8x6-U" title="La pasión de ser diferente - Bosco Tamames" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h4>"Cómo motivar a los profesionales de tu empresa en 10 minutos" – Alfonso Alcántara</h4>
+                    <p>Consejos concisos de este psicólogo organizacional para líderes que buscan incrementar el compromiso de sus equipos.</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/4kZPab5zPYs" title="Cómo motivar profesionales - Alfonso Alcántara" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <h4>"La neurociencia detrás del liderazgo" – Mauricio Bock</h4>
+                    <p>Explora cómo el conocimiento científico sobre el cerebro puede mejorar las habilidades de liderazgo.</p>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube-nocookie.com/embed/8X1tOa4v4xI" title="La neurociencia detrás del liderazgo - Mauricio Bock" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="conclusion">
+                <h2>Conclusión</h2>
+                <p>La falta de motivación en un equipo impacta negativamente la percepción del liderazgo: los colaboradores desmotivados suelen culpar al líder por su situación y evalúan peor su gestión. En Panamá y Centroamérica, donde la cultura laboral valora un liderazgo inspirador, mantener alta la motivación resulta clave para que el líder sea percibido como eficaz y comprometido. Por el contrario, un clima de trabajo negativo caracterizado por desinterés y baja comunicación puede arrastrar la imagen del líder hacia abajo.</p>
+                <p>Por ello, es fundamental que los líderes tomen acción proactiva: comunicando un propósito claro, reconociendo logros, empoderando al equipo y cuidando el bienestar del personal. Estas prácticas no solo incrementan el entusiasmo del equipo, sino que también fortalecen la autoridad y credibilidad del líder. En suma, líderes y motivación están estrechamente ligados: fomentar la motivación del equipo mejora la confianza en el liderazgo, y un liderazgo sólido a su vez sustenta la motivación colectiva.</p>
+            </div>
+
+            <h2>Recomendaciones prácticas</h2>
+
+            <div class="strategy-section">
+                <h3>● Para docentes y formadores:</h3>
+                <p>Incluya dinámicas participativas y muestre la relevancia práctica de los contenidos. Fije objetivos de aprendizaje claros y celebre avances, por pequeños que sean. Fomente la autonomía de los estudiantes (por ejemplo, con proyectos grupales donde decidan su enfoque) y ofrezca retroalimentación constructiva y oportuna. Estas acciones aumentan la motivación académica y la percepción positiva del liderazgo pedagógico.</p>
+
+                <h3>● Para estudiantes y colaboradores:</h3>
+                <p>Establezca metas personales de desarrollo y busque vínculos con sus intereses. Comuníquese proactivamente con el líder o profesor sobre sus desafíos, y proponga soluciones. Reconozca el valor del trabajo en equipo y apoye a sus compañeros, pues un entorno colaborativo eleva la moral general. Incluso en tareas rutinarias, intente encontrar un aprendizaje o propósito que las haga significativas.</p>
+
+                <h3>● Para líderes y responsables de equipo:</h3>
+                <p>Evalúe periódicamente el clima laboral mediante encuestas o reuniones de seguimiento. Escuche las necesidades de su equipo y actúe sobre ellas (por ejemplo, ajustando cargas de trabajo o brindando recursos). Capacítese en habilidades interpersonales: la empatía, la comunicación asertiva y la inteligencia emocional son básicas para motivar. Igualmente, modele el comportamiento deseado: la motivación y entusiasmo del líder son contagiosos. Finalmente, adopte un estilo de liderazgo participativo: incluir a los miembros en la toma de decisiones incrementa su compromiso y confianza en la dirección.</p>
+            </div>
+
+            <div class="bibliography">
+                <h2>Bibliografía</h2>
+                <ul>
+                    <li>Canal Slack. (2024, 13 de noviembre). Clima laboral: qué es, factores, tipos y cómo medirlo y mejorarlo. Blog de Slack. https://slack.com/intl/es-es/blog/collaboration/clima-laboral-que-es-factores-tipos-y-como-medirlo-y-mejorarlo</li>
+                    <li>Canle Otero, L. (2025, 25 de abril). Liderazgo efectivo para motivar equipos desmotivados. OpenWebinars. https://openwebinars.net/blog/liderazgo-efectivo-para-motivar-equipos-desmotivados</li>
+                    <li>De la Cruz, E., Hurtado, V., & Quintero, O. (2017). Motivación en crisis, líder al rescate. Revista Gente Clave, 1(1), 62-70.</li>
+                    <li>Estrategia & Negocios. (2014, 1 de octubre). MIT premia a los jóvenes innovadores con más talento de Centroamérica. https://www.revistaeyn.com/lasclavesdeldia/mit-premia-a-los-jovenes-innovadores-con-mas-talento-de-centroamerica-LJEN753448</li>
+                    <li>MG-Recursos-Laborales. (2025, 17 de mayo). Clima laboral y motivación: cómo la psicología mejora el ambiente en las organizaciones. https://mgrecursos.com.ar/clima-laboral-y-motivacion/</li>
+                    <li>Periodico El Emprendedor. (2016, 13 de noviembre). MIT reconoce a innovadores centroamericanos menores de 35 años. https://periodicoelemprendedor.com/ve/emprendedores/item/1175-mit-galardona-a-jóvenes-centroamericanos.html</li>
+                    <li>Redacción El Capital Financiero. (2023, 1 de marzo). Panameños quieren líderes empresariales más inspiradores y orientados a las personas. El Capital Financiero. https://elcapitalfinanciero.com/panamenos-quieren-lideres-empresariales-mas-inspiradores-y-orientados-a-las-personas/</li>
+                    <li>RevistaGenteClaves-Panamá. (2017). Informe de motivación en crisis (Vol. 1, Nro. 1). Universidad Latina de Panamá. (Artículo académico).</li>
+                    <li>Slack (Comentario de Harvard). (2024). (Informe basado en estudio universitario). En Canal Slackslack.com. (Citado en blog de Slack, Nov 2024).</li>
+                    <li>Quisocala, J. A. (2025). Premio Enrique García al Liderazgo por proyecto de inclusión financiera. CAF – Banco de Desarrollo de América Latina y el Caribe. https://www.caf.com/es/actualidad/noticias/joven-peruano-gana-el-ii-premio-enrique-garcia-al-liderazgo-por-su-proyecto-de-inclusion-financiera/</li>
+                    <li>Revista Gente Clave – Univ. Latina de Panamá. (2017). Motivación en crisis, líder al rescate (vol. 1, nº 1, pp. 62-70)dialnet.unirioja.es.</li>
+                    <li>RevistaTecnologyReview. (2014). Innovadores menores de 35 Centroamérica 2014. Instituto Tecnológico de Massachusetts. (Lista de premiados).</li>
+                    <li>Sánchez, D. (2021, 30 de mayo). Las 10 mejores charlas TED en español sobre motivación e inspiración. Business Insider España. https://www.businessinsider.es/desarrollo-profesional/10-mejores-charlas-ted-espanol-motivacion-inspiracion-870959</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 - Blog sobre Liderazgo y Motivación</p>
+            <div class="author-info">
+                <h3>Ángel Márquez</h3>
+                <p>Cédula: 8-1050-2207</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
