@@ -24,7 +24,9 @@ El blog incluye:
 
 ## 🚀 Uso
 
-Simplemente abre el archivo `blog.html` en tu navegador para ver el blog.
+### Ver localmente
+
+Simplemente abre el archivo `blog.html` o `index.html` en tu navegador para ver el blog.
 
 ```bash
 # Opción 1: Abrir directamente
@@ -34,6 +36,22 @@ open blog.html
 python -m http.server 8000
 # Luego visita http://localhost:8000/blog.html
 ```
+
+### Habilitar GitHub Pages
+
+Para publicar el blog en línea con GitHub Pages:
+
+1. Ve a tu repositorio en GitHub: https://github.com/george888-q/La-influencia-de-la-motivaci-n-en-la-percepci-n-del-liderazgo-en-equipos
+2. Haz clic en **Settings** (Configuración)
+3. En el menú lateral, busca **Pages**
+4. En **Source**, selecciona **Deploy from a branch**
+5. Selecciona la rama **main** y la carpeta **/ (root)**
+6. Haz clic en **Save**
+
+Tu blog estará disponible en:
+`https://george888-q.github.io/La-influencia-de-la-motivaci-n-en-la-percepci-n-del-liderazgo-en-equipos/`
+
+**Nota:** Puede tardar unos minutos en estar disponible después de habilitarlo.
 
 ## 🛠️ Tecnologías
 
